@@ -27,8 +27,8 @@ class WP465BusEventHandler(object):
 
     def _enable_devstate(self, event):
         if event['mobile']:
-            logger.debug('Enable devstate')
             self.services.enable_devstate(event['user_uuid'])
 
     def _disable_devstate(self, event):
+        # Need a fix to know if the session deleted if mobile or not.
         state = self.services.disable_devstate(event['user_uuid'])
