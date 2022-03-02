@@ -1,0 +1,10 @@
+name: wazo-calld-mobile-group
+namespace: sboily
+version: 0.0.1
+author: Sylvain Boily
+display_name: Fix for mobile group background WP465
+tags:
+  - beta
+  - group
+  - mobile
+homepage: https://github.com/sboily/wazo-calld-mobile-group
