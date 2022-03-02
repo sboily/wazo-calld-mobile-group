@@ -21,5 +21,5 @@ class WP465Service(object):
     def disable_devstate(self, uuid):
         self.amid.action('setVar', {
             'Variable': f"DEVICE_STATE(Custom:{uuid})",
-            'Value': 'NOT_INUSE'
+            'Value': 'UNAVAILABLE'
         })
