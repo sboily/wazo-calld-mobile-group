@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright 2022 The Wazo Authors  (see the AUTHORS file)
-# SPDX-License-Identifier: GPL-3.0+
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 from wazo_amid_client import Client as AmidClient
 
@@ -8,7 +7,7 @@ from .services import WP465Service
 from .bus_consume import WP465BusEventHandler
 
 
-class Plugin(object):
+class Plugin():
 
     def load(self, dependencies):
         config = dependencies['config']

@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright 2022 The Wazo Authors  (see the AUTHORS file)
-# SPDX-License-Identifier: GPL-3.0+
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 import logging
 
@@ -10,7 +9,7 @@ from kombu import binding
 logger = logging.getLogger(__name__)
 
 
-class WP465BusEventHandler(object):
+class WP465BusEventHandler():
 
     def __init__(self, service, bus_consumer):
         self.services = service
