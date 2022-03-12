@@ -2,5 +2,3 @@ wazo-calld:
   system_user: www-data
   acl:
     - 'amid.action.setVar.create'
-    - 'amid.action.DialplanExtensionAdd.create'
-    - 'amid.action.ExtensionState.create'
