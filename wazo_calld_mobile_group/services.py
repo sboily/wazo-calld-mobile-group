@@ -18,7 +18,6 @@ class WP465Service():
         })
 
     def disable_devstate(self, uuid):
-        endpoint = self._get_endpoint(uuid)
         self.amid.action('setVar', {
             'Variable': f"DEVICE_STATE(Custom:{uuid})",
             'Value': 'UNAVAILABLE'
