@@ -1,0 +1,13 @@
+diff --git a/xivo_dao/resources/func_key/hint_dao.py b/xivo_dao/resources/func_key/hint_dao.py
+index cde9bb7c..ef79709e 100644
+--- a/xivo_dao/resources/func_key/hint_dao.py
++++ b/xivo_dao/resources/func_key/hint_dao.py
+@@ -99,7 +99,7 @@ def user_shared_hints(session):
+     query = session.query(UserFeatures).options(joinedload('user_lines').joinedload('line'))
+     hints = []
+     for user in query.all():
+-        ifaces = []
++        ifaces = ['Custom:{}'.format(user.uuid)]
+         for line in user.lines:
+             if line.endpoint_custom_id:
+                 ifaces.append(line.name)

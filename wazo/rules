@@ -2,6 +2,8 @@
 # Copyright 2022 Sylvain Boily
 # SPDX-License-Identifier: GPL-3.0+
 
+DAO = "/usr/lib/python2.7/dist-packages/xivo_dao/"
+
 case "$1" in
     build)
         python3 setup.py bdist
@@ -10,16 +12,23 @@ case "$1" in
     package)
         tar xvf dist/wazo-calld-mobile-group-*.tar.gz -C ${pkgdir}
         cp -R etc ${pkgdir}/
+        cp -R patches ${pkgdir}/${DAO}
         ;;
 
     install)
+        patch -p1 ${DAO}/resources/func_key/hint_dao.py ${DAO}/patches/dao_patch_hint_for_mobile_group.diff
 	wazo-auth-keys service update
         systemctl restart wazo-calld
+        systemctl restart wazo-confgend
+        systemctl restart asterisk
         ;;
 
     uninstall)
+        patch -R -p1 ${DAO}/resources/func_key/hint_dao.py ${DAO}/patches/dao_patch_hint_for_mobile_group.diff
 	wazo-auth-keys service update
         systemctl restart wazo-calld
+        systemctl restart wazo-confgend
+        systemctl restart asterisk
         ;;
 
     *)
