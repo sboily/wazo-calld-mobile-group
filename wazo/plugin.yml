@@ -7,4 +7,6 @@ tags:
   - beta
   - group
   - mobile
+debian_depends:
+  - patch
 homepage: https://github.com/sboily/wazo-calld-mobile-group
