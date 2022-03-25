@@ -17,7 +17,7 @@ case "$1" in
 
     install)
         patch -p1 ${DAO}/resources/func_key/hint_dao.py /patches/dao_patch_hint_for_mobile_group.diff
-	wazo-auth-keys service update
+        wazo-auth-keys service update
         systemctl restart wazo-calld
         systemctl restart wazo-confgend
         systemctl restart asterisk
@@ -25,7 +25,7 @@ case "$1" in
 
     uninstall)
         patch -R -p1 ${DAO}/resources/func_key/hint_dao.py /patches/dao_patch_hint_for_mobile_group.diff
-	wazo-auth-keys service update
+        wazo-auth-keys service update
         systemctl restart wazo-calld
         systemctl restart wazo-confgend
         systemctl restart asterisk
